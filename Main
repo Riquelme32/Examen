@@ -1,0 +1,58 @@
+package examen;
+
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+
+
+public class Examen {
+
+    
+    public static void main(String[] args)
+    {
+        ArrayList<String> numeros = new ArrayList <String>();
+        Scanner leer = new Scanner (System.in);
+        int opc1,opc2;
+          do{ //OPCIONES DEL MENU
+               opc2 =1; //PARA LEER LA ULTIMA OPCION
+                 System.out.println("\n1.Introcuzca numero");
+                 System.out.println("2.Suma");
+                 System.out.println("3.Resta");
+                 System.out.println("4. Multiplicacion");
+                 System.out.println("5.Salir");
+                
+              opc1 = leer.nextInt();
+              int num = 0;
+           switch (opc1) 
+           {
+               case 1:
+                  for (int i=1; i<=10; i++){
+                   numeros.add("Ingrese el primer numero "+i+ );
+                   
+               } numeros.forEach((numero) -> {
+            System.out.println(numero);//tipo de for donde muestra todos los datos de la lista
+            
+        });
+                 break;
+                 
+               case 2:
+                   int suma = 0;
+                    int i;
+                  if (!numeros.isEmpty())
+                  { //si la lista no esta vacia
+                       System.out.println("Inserte el indice del elemento");
+                      i  = leer.nextInt ();
+                      
+                      if (i<1||i>numeros.size()){
+                          System.out.println("El elemento no existe");
+                      }else { 
+                           System.out.println("Inserte el nuevo dato");
+                      suma= leer.next();
+                      numeros.set(i-1, suma);
+                      }
+                     
+                   } else {System.out.println("La lista vacia");
+                  }
+                   
+                   break;
